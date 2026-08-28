@@ -57,6 +57,8 @@ def is_palindrome(s):
         return True
     else:
         return False
+ 
+    
     
 
 # 테스트 케이스
