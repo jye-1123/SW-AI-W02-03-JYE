@@ -42,8 +42,22 @@ def is_palindrome(s):
     # 방법1: 문자열을 뒤집어서 비교 ([::-1] 사용)
     # 방법2: 양 끝 인덱스를 이용한 투 포인터 방식
     pass
+
+    n = []
+    s = s.lower()
     
-    #return False
+    for i in s:
+        if i.isalnum():
+            n.append(i)
+    
+    n = "".join(n)
+    n2 = n[::-1]
+    
+    if n == n2:
+        return True
+    else:
+        return False
+    
 
 # 테스트 케이스
 if __name__ == "__main__":
@@ -73,5 +87,3 @@ if __name__ == "__main__":
     result4 = is_palindrome(test4)
     print(f"입력: \"{test4}\"")
     print(f"회문 여부: {result4}")
-
-
