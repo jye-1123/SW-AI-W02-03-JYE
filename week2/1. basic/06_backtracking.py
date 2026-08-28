@@ -145,7 +145,9 @@ def combinations(n: int, k: int) -> list:
         #     result.append(...)
         #     return
         pass  
-
+        if len(current_combination) == k:
+          result.append(list(current_combination))
+          return
         # ──────────────────────────────────────────────────────────────────
         # [Level 2] 가지치기 반복문
         # ──────────────────────────────────────────────────────────────────
@@ -155,7 +157,8 @@ def combinations(n: int, k: int) -> list:
         #
         # TODO(Level 2): 아래 한 줄을 작성하세요.
         pass
-
+        for num in range(start, n+1):
+          
             # ──────────────────────────────────────────────────────────────
             # [Level 3] 백트래킹 3단계
             # ──────────────────────────────────────────────────────────────
@@ -168,7 +171,9 @@ def combinations(n: int, k: int) -> list:
             # current_combination.append(...)
             # backtrack(..., current_combination)
             # current_combination.pop()
-
+            current_combination.append(num)
+            backtrack(num+1, current_combination)
+            current_combination.pop()
     # 처음 호출: 시작 숫자는 1, 지금까지 고른 숫자는 비어 있음
     backtrack(1, [])
     return result
@@ -217,3 +222,14 @@ if __name__ == "__main__":
     result4 = combinations(n4, k4)
     print(f"C({n4}, {k4}) = {result4}")
     print(f"총 {len(result4)}개의 조합")
+
+
+# → 2 append
+# → [1,2]
+# → 재귀 호출
+# → k=2 도달, result에 복사본 저장
+# → return
+# → 이전 호출로 복귀
+# → 2 pop
+# → [1]
+# → 다음 숫자 3 append
