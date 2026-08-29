@@ -109,26 +109,26 @@ combinations(n, k) -> list[list[int]]
 
 
 def combinations(n: int, k: int) -> list:
-    """
-    1 부터 n 까지 숫자 중 k 개를 선택하는 모든 조합을 반환합니다.
+    # """
+    # 1 부터 n 까지 숫자 중 k 개를 선택하는 모든 조합을 반환합니다.
 
-    Args:
-        n: 전체 숫자 개수 (1, 2, ..., n)
-        k: 선택할 개수
+    # Args:
+    #     n: 전체 숫자 개수 (1, 2, ..., n)
+    #     k: 선택할 개수
 
-    Returns:
-        모든 조합을 담은 리스트(예: [[1,2], [1,3], ...])
-    """
+    # Returns:
+    #     모든 조합을 담은 리스트(예: [[1,2], [1,3], ...])
+    # """
     result = []  # 완성된 조합을 모아 둘 곳
 
     def backtrack(start: int, current_combination: list) -> None:
-        """
-        재귀(백트래킹) 헬퍼 함수.
+        # """
+        # 재귀(백트래킹) 헬퍼 함수.
 
-        Args:
-            start: 이번에 시도해볼 수 있는 가장 작은 숫자
-            current_combination: 지금까지 골라 둔 숫자들 (탐색 중)
-        """
+        # Args:
+        #     start: 이번에 시도해볼 수 있는 가장 작은 숫자
+        #     current_combination: 지금까지 골라 둔 숫자들 (탐색 중)
+        # """
 
         # ──────────────────────────────────────────────────────────────────
         # [Level 1] 종료 조건 (Base Case)
@@ -144,10 +144,12 @@ def combinations(n: int, k: int) -> list:
         # if len(current_combination) == ...:
         #     result.append(...)
         #     return
-        pass  
+        pass 
+      
         if len(current_combination) == k:
           result.append(list(current_combination))
           return
+        
         # ──────────────────────────────────────────────────────────────────
         # [Level 2] 가지치기 반복문
         # ──────────────────────────────────────────────────────────────────
@@ -174,6 +176,7 @@ def combinations(n: int, k: int) -> list:
             current_combination.append(num)
             backtrack(num+1, current_combination)
             current_combination.pop()
+            
     # 처음 호출: 시작 숫자는 1, 지금까지 고른 숫자는 비어 있음
     backtrack(1, [])
     return result
