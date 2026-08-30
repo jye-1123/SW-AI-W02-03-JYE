@@ -49,17 +49,17 @@ def rotate_matrix_90(matrix):
     # 힌트: (i, j) 위치의 요소는 회전 후 (j, n-1-i) 위치로 이동
     pass
     
-    n = len(matrix)
+    # n = len(matrix)
     
-    rotated = [[0 for _ in range(n)] for _ in range(n)]
+    # rotated = [[0 for _ in range(n)] for _ in range(n)]
     
-    for i in range(n):
-        for j in range(n):
-            rotated[j][n-1-i] = matrix[i][j]
+    # for i in range(n):
+    #     for j in range(n):
+    #         rotated[j][n-1-i] = matrix[i][j]
             
-    return rotated
+    # return rotated
     
-    
+    return [list(row) for row in zip(*matrix[::-1])]
 
     
 def print_matrix(matrix):

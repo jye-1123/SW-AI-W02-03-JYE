@@ -53,10 +53,7 @@ def is_palindrome(s):
     n = "".join(n)
     n2 = n[::-1]
     
-    if n == n2:
-        return True
-    else:
-        return False
+    return True if (n == n2) else False
  
     
     

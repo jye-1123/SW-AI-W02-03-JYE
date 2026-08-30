@@ -49,6 +49,7 @@ def is_valid_parentheses(s):
 
         elif i == ")" and (len(stack) > 0):
             stack.pop()
+            
     
     # TODO: 반복이 끝나면 스택이 비어있는지 확인
     pass
