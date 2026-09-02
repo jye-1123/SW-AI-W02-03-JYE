@@ -68,8 +68,35 @@ def n_queens(n: int) -> int:
     #       ...
     #   place(0)
     #   return count
-    pass
+    cols = [0] * n
+    count = 0
 
+
+    def place(row):
+        nonlocal count
+
+        # 모든 행에 퀸을 배치했다면 성공
+        if row == n:
+            count += 1
+            return
+
+        # 현재 row에서 모든 열을 하나씩 시도
+        for c in range(n):
+            is_safe = True
+            for i in range(row):  # 이전에 배치한 퀸들과 충돌 검사
+                if cols[i] == c or abs(cols[i] - c) == row - i: # 같은 열 또는 대각선이면 배치 불가능
+                    is_safe = False
+                    break
+
+            # 충돌하지 않는다면 현재 위치에 퀸 배치
+            if is_safe:
+                cols[row] = c
+
+                # 다음 행으로 이동
+                place(row + 1)
+
+    place(0)
+    return count
 
 if __name__ == "__main__":
     print("[테스트] N=1 ~ N=8 에 대한 가능한 배치의 수")

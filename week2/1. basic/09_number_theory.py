@@ -117,21 +117,32 @@ def is_prime(n):
     # 2부터 sqrt(n)까지 나누어 떨어지는지 확인    
     # 3부터 sqrt(n)까지 홀수만 확인
     pass 
-    import math
+    
+    # if n < 2:
+    #     return False
+    # if n == 2:
+    #     return True
+    # if n%2 == 0:
+    #     return False
+    
+    # for i in range(3, int(n**0.5), 2):
+    #     if i%n == 0:
+    #         return False
+        
+    # return True
     
     if n < 2:
         return False
-    if n == 2:
+    elif n == 2:
         return True
-    if n%2 == 0:
+    elif n % 2 == 0:
         return False
+    else:
+        for i in range(3, n, 2):
+            if i % n == 0:
+                return False
     
-    for i in range(3, int(math.sqrt(n)), 2):
-        if i%n == 0:
-            return False
-        
     return True
-        
         
         
 # 테스트 케이스

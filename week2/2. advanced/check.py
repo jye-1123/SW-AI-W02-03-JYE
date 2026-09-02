@@ -53,7 +53,7 @@ def check_solution(problem_file):
 
     if not output_file.exists():
         return False, f"❌ 정답 파일을 찾을 수 없습니다: {output_file.name}"
-
+    
     try:
         result = subprocess.run(
             ['python3', str(problem_path)],

@@ -41,9 +41,7 @@ def process_emergency_room(patients):
     
     
     # TODO: 모든 환자를 힙에 추가
-    i = 0
-    
-    for patient in patients1:
+    for patient in patients:
         result = (patient[1], patient[0])
         heapq.heappush(heap, result)
     
@@ -70,7 +68,8 @@ if __name__ == "__main__":
     ]
     print("=== 응급실 환자 처리 ===")
     result1 = process_emergency_room(patients1)
-    print(f"처리 순서: {result1}")
+    for i in result1:
+        print(f"처리: {i[1]} (우선순위: {i[0]})")
     print()
     
     # 테스트 케이스 2
@@ -82,6 +81,7 @@ if __name__ == "__main__":
     ]
     print("=== 응급실 환자 처리 ===")
     result2 = process_emergency_room(patients2)
-    print(f"처리 순서: {result2}")
+    for i in result2:
+            print(f"처리: {i[1]} (우선순위: {i[0]})")
 
 

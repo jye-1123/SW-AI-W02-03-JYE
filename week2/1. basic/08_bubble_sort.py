@@ -46,7 +46,7 @@ def bubble_sort(arr):
     for i in range(n-1):
         for j in range(n-i-1):
             if arr[j] > arr[j+1]:
-                # arr[i]가 arr[j]보다 크면 arr[j]를 [i]에 넣고 [i]값을 [j]에 넣기
+                # arr[j]가 arr[j]보다 크면 arr[j]를 [i]에 넣고 [j]값을 [j]에 넣기
                 arr[j], arr[j+1] = arr[j+1], arr[j]
 
     return arr
