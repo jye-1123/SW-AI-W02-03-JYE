@@ -146,7 +146,7 @@ class LinkedList:
         # TODO: while 문으로 current 를 마지막 노드까지 이동시키세요.
         #   while current.next is not None:
         #       current = current.next
-        while(current.next is not None):
+        while current.next is not None:
             current = current.next
 
         # ─── Level 3: 마지막 노드의 next 에 새 노드를 붙이기 ─────────

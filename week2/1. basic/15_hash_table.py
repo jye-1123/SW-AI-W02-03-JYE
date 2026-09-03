@@ -60,6 +60,7 @@ def manage_grades(students):
     
     return average, top_student, top_score
 
+
 def find_student_score(students, name):
     """
     특정 학생의 점수 조회

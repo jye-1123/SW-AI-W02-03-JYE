@@ -138,7 +138,7 @@ def is_prime(n):
     elif n % 2 == 0:
         return False
     else:
-        for i in range(3, n, 2):
+        for i in range(3, int(n**0.5), 2):
             if i % n == 0:
                 return False
     
@@ -189,5 +189,4 @@ if __name__ == "__main__":
     for num in test_numbers:
         result = "소수" if is_prime(num) else "합성수"
         print(f"{num}: {result}")
-
-
+        

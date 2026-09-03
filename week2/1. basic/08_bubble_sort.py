@@ -78,6 +78,7 @@ def bubble_sort_optimized(arr):
         pass
         if not swapped:
             break
+        
     return arr
 
 # 테스트 케이스
