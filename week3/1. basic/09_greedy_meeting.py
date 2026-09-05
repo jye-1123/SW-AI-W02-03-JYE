@@ -33,7 +33,8 @@ def select_meetings(meetings):
         (배정된 회의 개수, 선택된 회의 리스트)
     """
     # TODO: 회의가 없으면 0 반환
-    pass
+    if meetings is None:
+        return 0
     
     # TODO: 종료 시간 기준으로 정렬
     pass
