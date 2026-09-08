@@ -46,6 +46,7 @@ def dfs(graph, start, visited=None):
     # TODO: visited가 None이면 초기화
     if visited is None:
         visited = []
+    seen = {}
     
     # TODO: 현재 정점 방문
     visited.append(start)

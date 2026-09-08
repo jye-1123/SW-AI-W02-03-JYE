@@ -51,7 +51,7 @@ def bfs(graph, start):
     queue = deque([start])
 
     # TODO: 큐가 빌 때까지 반복
-    ## 큐에서 정점 꺼내기
+    ## 큐에서 정점 꺼내기 
     ## 인접한 정점들 확인
     ## 방문하지 않은 정점이면 큐에 추가
     while queue:
