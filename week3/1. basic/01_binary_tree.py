@@ -52,9 +52,9 @@ def preorder(root):
     result.append(root.value)
     
     # TODO: 왼쪽 서브트리 순회
-    result += preorder(root.left)
+    result.extend(preorder(root.left))
     # TODO: 오른쪽 서브트리 순회
-    result += preorder(root.right)
+    result.extend(preorder(root.right))
     
     return result
 
@@ -96,6 +96,19 @@ def postorder(root):
     
     return result
 
+def cnt_node(root):
+    if root is None:
+        return 0
+    
+    return 1 + cnt_node(root.left) + cnt_node(root.right)
+
+def sum_node(root):
+    if root is None:
+        return 0
+    
+    return root.value + sum_node(root.left) + sum_node(root.right)
+
+
 # 테스트 케이스
 if __name__ == "__main__":
     # 트리 생성:
@@ -114,4 +127,5 @@ if __name__ == "__main__":
     print(f"전위 순회: {preorder(root)}")
     print(f"중위 순회: {inorder(root)}")
     print(f"후위 순회: {postorder(root)}")
-
+    print(f"노드 개수: {cnt_node(root)}")
+    print(f"노드의 합: {sum_node(root)}")

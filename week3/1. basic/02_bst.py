@@ -63,7 +63,7 @@ def search_bst(root, target):
         return search_bst(root.right, target)
     else:
         return True
-        
+
 
 # 테스트 케이스
 if __name__ == "__main__":
