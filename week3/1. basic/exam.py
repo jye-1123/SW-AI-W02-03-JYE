@@ -544,3 +544,23 @@
 
 # for i in range(1, N+1):
 #     print(order[i])
+
+
+## 백준 11053
+
+# 수열의 크기 입력
+size = int(input())
+
+# 수열을 이루고 있는 정수 입력
+arr = []
+arr.extend(map(int, input().split()))
+
+# 각 인수를 마지막 값으로 했을 때 가장 긴 길이를 담는 리스트
+arr_len = [1] * size    #[1, 1, 1, 1, 1, 1]
+
+for i in range(size):
+    for j in range(i):
+        
+        pass
+
+print(max(arr_len))
